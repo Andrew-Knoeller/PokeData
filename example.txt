@@ -1,0 +1,20 @@
+<button id="fetchBtn">Fetch Data</button>
+<div id="dataContainer"></div>
+
+<script>
+const fetchBtn = document.getElementById('fetchBtn');
+const dataContainer = document.getElementById('dataContainer');
+
+fetchBtn.addEventListener('click', function() {
+  fetch('https://api.example.com/data')
+    .then(response => response.json())
+    .then(data => {
+      let output = '';
+      data.forEach(item => {
+        output += `<p>${item.name}: ${item.value}</p>`;
+      });
+      dataContainer.innerHTML = output;
+    })
+    .catch(error => console.error(error));
+});
+</script>
