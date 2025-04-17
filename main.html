@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+  <!--
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+      </tr>
+      <tr>
+        <td>Pikachu</td>
+        <td>Electric</td>
+      </tr>
+      <tr>
+        <td>Charizard</td>
+        <td>Fire/Flying</td>
+      </tr>
+      <tr>
+        <td>Blastoise</td>
+        <td>Water</td>
+      </tr>
+      <tr>
+        <td>Venusaur</td>
+        <td>Grass/Poison</td>
+      </tr>
+      <tr>
+        <td>Mewtwo</td>
+        <td>Psychic</td>
+      </tr>
+    </table>
+  -->
+    <div>
+      {% for query in data %}
+      <p id="data"> {{query}} </p>
+      {% endfor %}
+    </div>
+
+
+    <div>
+        {% for name in names %}
+        <p id="name"> {{name}} </p>
+        {% endfor %}
+    </div>
+
+    <div>
+      {% block content %}
+        {% for number in numbers %}
+        <p id="number"> {{number}} </p>
+        {% endfor %}
+      {% endblock %}
+    </div>
+
+    <div>
+        {% for type in types %}
+        <p id="type"> {{type}} </p>
+        {% endfor %}
+    </div>
+
+    <div>
+      {% for ability in abilities %}
+      <p id="ability"> {{ability}} </p>
+      {% endfor %}
+    </div>
+
+    <div>
+      {% for move in moves %}
+      <p id="move"> {{move}} </p>
+      {% endfor %}
+    </div>
+
+    <div>
+      {% for location in locations %}
+      <p id="location"> {{location}} </p>
+      {% endfor %}
+    </div>
+
+
+  </body>
+</html>

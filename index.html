@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 64px;
+    text-align: center;
+    border-style: double;
+    border-color: blue;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create a column layout with Flexbox */
+.row {
+  display: flex;
+}
+
+/* Left column (menu) */
+.left {
+  flex: 35%;
+  padding: 15px 0;
+}
+
+.left h2 {
+  padding-left: 8px;
+}
+
+/* Right column (page content) */
+.right {
+  flex: 65%;
+  padding: 15px;
+}
+
+/* Style the search box */
+#mySearch {
+  width: 100%;
+  font-size: 18px;
+  padding: 11px;
+  border: 1px solid #ddd;
+}
+
+/* Style the navigation menu inside the left column */
+#myMenu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myMenu li a {
+  padding: 12px;
+  text-decoration: none;
+  color: black;
+  display: block
+}
+
+#myMenu li a:hover {
+  background-color: #eee;
+}
+
+#header {
+    text-align: center;
+    font-size: 24px;
+    padding: 0;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>Pokédata</h1>
+<p id="header">Gotta search em all!</p>
+
+<div class="row">
+  <div class="left" style="background-color:#bbb;">
+    <h2>Menu</h2>
+    <form action="{{ url_for('search')}}" method="post">
+    <input type="text" id="mySearch" name="searchBox" placeholder="Search.." title="Type in a Pokémon">
+    <button type="submit">Search</button>
+    <ul id="myMenu">
+      <li><a href="/name/">Name</a></li>
+      <li><a href="/number/">Number</a></li>
+      <li><a href="/type/">Type</a></li>
+      <li><a href="/ability/">Abilities</a></li>
+      <li><a href="/move/">Moves</a></li>
+      <li><a href="/location/">Location</a></li>
+    </ul>
+  </div>
+  
+  <div class="right" style="background-color:#ddd;">
+    <h2>Welcome to the Pokédata system</h2>
+    <p>Search for a Pokémon directly in the search bar.</p>
+    <p>You can also browse by different categories.</p>
+    </br>
+    </br>
+    <p>Enjoy!</p>
+  </div>
+</div>
+
+
+</body>
+</html>
